@@ -23,7 +23,6 @@
     "bluebird": "^3.7.2",
     "chalk": "^4.1.0",
     "dotenv": "^8.1.0",
-    "flat": "^5.0.2",
     "inquirer": "^7.3.3",
     "lodash": "^4.17.15",
     "pluralize": "^8.0.0",

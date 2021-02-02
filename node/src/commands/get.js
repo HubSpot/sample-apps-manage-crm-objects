@@ -1,6 +1,5 @@
 const _ = require('lodash');
 const pluralize = require('pluralize');
-const flatten = require('flat');
 const { AVAILABLE_OBJECT_TYPES } = require('../helpers/constants');
 const { checkConfig } = require('../config');
 const { logger } = require('../helpers/logger');
