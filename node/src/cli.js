@@ -30,8 +30,5 @@ yargs
   .command(propertiesCommand)
   .help()
   .recommendCommands()
-  .demandCommand(
-    1,
-    'You need at least one command before moving on. Please use --help to find out available commands'
-  )
+  .demandCommand(1, '')
   .strictCommands().argv;
