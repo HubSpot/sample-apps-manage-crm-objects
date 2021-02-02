@@ -1,0 +1,36 @@
+{
+  "name": "hubspot-crm-objects",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "description": "hubspot-node client sample applications",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/cli.js",
+    "dev": "node src/cli.js",
+    "prettier:write": "prettier --write './**/*.{js,json}'"
+  },
+  "keywords": [
+    "hubspot",
+    "sample",
+    "example"
+  ],
+  "author": "hubspot",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@hubspot/api-client": "^3.0.1",
+    "bluebird": "^3.7.2",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.1.0",
+    "flat": "^5.0.2",
+    "inquirer": "^7.3.3",
+    "lodash": "^4.17.15",
+    "pluralize": "^8.0.0",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3",
+    "prettier": "^2.2.1"
+  }
+}
