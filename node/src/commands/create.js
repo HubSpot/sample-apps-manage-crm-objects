@@ -16,7 +16,7 @@ exports.handler = async (options) => {
     process.exit(1);
   }
 
- await createObject({
+  await createObject({
     objectType: pluralize(objectType),
     properties: cleanupDefaultArgs(properties),
   });
