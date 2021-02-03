@@ -4,7 +4,6 @@ This is a sample app for the HubSpot [client libraries](https://developers.hubsp
 
 ## Reference
 
-- [Working with OAuth](https://developers.hubspot.com/docs/api/working-with-oauth)
 - [CRM Objects API ](https://developers.hubspot.com/docs/api/crm/understanding-the-crm)
 
 ## How to run locally
@@ -30,8 +29,3 @@ node src/cli.js
 ## Supported languages
 
 * [JavaScript (Node)](node/README.md)
-
-## Note on application scopes
-HubSpot provides a way to restrict application users access to the system to certain scopes. In order to do that it is a good practice to make a set of scopes required by your application.
-Please refer to [Initiate an Integration with OAuth 2.0](https://developers.hubspot.com/docs/methods/oauth2/initiate-oauth-integration) for documentation on the scope parameter passed to https://app.hubspot.com/oauth/authorize to make a set of scopes required. [Scopes](https://developers.hubspot.com/docs/methods/oauth2/initiate-oauth-integration#scopes) explains how to make optional scopes and talks about scopes available in HubSpot system
-
