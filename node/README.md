@@ -18,7 +18,7 @@ npm install
 If .env config file was not configured manually there is a way to initialize the CLI and create .env file via:
 
 ```bash
-node src/cli.js init
+./bin/cli.js init
 ```
 
 It will ask for your Hubspot Api Key and will save it to new .env config file.
@@ -28,38 +28,38 @@ It will ask for your Hubspot Api Key and will save it to new .env config file.
 Show all commands
 
 ```bash
-node src/cli.js --help
+./bin/cli.js --help
 ```
 Get list of objects
 
 ```bash
-node src/cli.js get [objectType] -a --query='test'
+./bin/cli.js get [objectType] -a --query='test'
 ```
 
 Creare new object
 
 ```bash
-node src/cli.js create [objectType]
+./bin/cli.js create [objectType]
 ```
 
 Please also notice that some objects require mandatory properties, that you can provide in the following way:
 ```bash
-node src/cli.js create [objectType] --email='test@test.com' --name='Test name'
+./bin/cli.js create [objectType] --email='test@test.com' --name='Test name'
 ```
 
 Update existing object
 
 ```bash
-node src/cli.js udpate [objectType] [objectId] --name='Test name'
+./bin/cli.js udpate [objectType] [objectId] --name='Test name'
 ```
 
 Archive existing object
 
 ```bash
-node src/cli.js delete [objectType] [objectId]
+./bin/cli.js delete [objectType] [objectId]
 ```
 
 Get list of available properties for an object
 ```bash
-node src/cli.js properties [objectType]
+./bin/cli.js properties [objectType]
 ```
