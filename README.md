@@ -1,6 +1,6 @@
 # HubSpot CRM Objects sample app
 
-This is a sample app for the HubSpot [client libraries](https://developers.hubspot.com/docs/api/overview). This sample app demonstrates how to authenticate your HubSpot app using OAuth 2.0, and make an API call to different CRM Objects API.
+This is a sample app for the HubSpot [client libraries](https://developers.hubspot.com/docs/api/overview). This sample app demonstrates how to make CRUD API calls to different CRM Objects Endpoints.
 
 ## Reference
 
