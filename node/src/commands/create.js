@@ -12,7 +12,6 @@ exports.describe = 'Create CRM object';
 exports.handler = async (options) => {
   const { objectType, ...properties } = options;
 
-  console.log(`Object Type, ${objectType}`);
   if (!checkConfig()) {
     process.exit(1);
   }
