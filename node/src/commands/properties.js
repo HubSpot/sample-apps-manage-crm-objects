@@ -23,6 +23,7 @@ exports.builder = (yargs) => {
     describe: 'CRM object type',
     type: 'string',
     choices: Object.values(AVAILABLE_OBJECT_TYPES),
+    coerce: arg => arg.toLowerCase(),
   });
   return yargs;
 };
