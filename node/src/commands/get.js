@@ -41,7 +41,7 @@ exports.builder = (yargs) => {
       ...Object.values(AVAILABLE_OBJECT_TYPES),
       ...Object.keys(AVAILABLE_OBJECT_TYPES),
     ].sort(),
-    coerce: arg => arg.toLowerCase(),
+    coerce: (arg) => arg.toLowerCase(),
   });
 
   yargs.positional('objectId', {
