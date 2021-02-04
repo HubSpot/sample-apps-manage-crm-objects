@@ -3,7 +3,7 @@
 ### Requirements
 
 1. Node v10+
-2. [Configured](https://github.com/HubSpot/sample-apps-oauth/blob/main/README.md#how-to-run-locally) .env file
+2. [Configured](https://github.com/HubSpot/sample-apps-manage-crm-objects/blob/main/README.md#how-to-run-locally) .env file
 
 ### Running
 
