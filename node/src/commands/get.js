@@ -41,6 +41,7 @@ exports.builder = (yargs) => {
       ...Object.values(AVAILABLE_OBJECT_TYPES),
       ...Object.keys(AVAILABLE_OBJECT_TYPES),
     ].sort(),
+    coerce: (arg) => arg.toLowerCase(),
   });
 
   yargs.positional('objectId', {
@@ -49,6 +50,7 @@ exports.builder = (yargs) => {
   });
 
   yargs.option('query', {
+    alias: 'q',
     describe: 'searching filter for getting list of objects',
     type: 'string',
   });
