@@ -1,5 +1,13 @@
+#!/usr/bin/env php
 <?php
 
-include_once '../../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
-echo 'fd';
+use Symfony\Component\Console\Application;
+use Commands\InitCommand;
+
+$application = new Application();
+
+$application->add(new InitCommand());
+
+$application->run();
