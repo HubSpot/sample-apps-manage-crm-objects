@@ -1,0 +1,13 @@
+{
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2.5",
+        "symfony/console": "^5.2",
+        "vlucas/phpdotenv": "^5.3@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
