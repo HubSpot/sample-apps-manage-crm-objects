@@ -11,14 +11,10 @@ class InitCommand extends Command {
     
     protected $fileName = __DIR__.'/../../.env';
 
-    protected function configure()
-    {
-        
-    }
-
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
+        
         if (file_exists($this->fileName) && !$io->confirm('The file ".env" already exists. Overwrite?')) {
             return Command::SUCCESS;
         }
