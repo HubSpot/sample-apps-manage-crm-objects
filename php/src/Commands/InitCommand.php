@@ -29,7 +29,7 @@ class InitCommand extends Command {
         $apiKey = $io->ask(
             'Enter the API key for your account (found at https://app.hubspot.com/l/api-key)',
             null,
-            function ($key) use ($apiKeyRegex) {
+            function ($key) {
                 if (empty($key)) {
                     throw new \RuntimeException('Key can\'t be empty.');
                 }
