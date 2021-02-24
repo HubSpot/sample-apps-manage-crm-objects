@@ -9,22 +9,22 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class InitCommand extends Command {
     protected static $defaultName = 'app:init';
     
-    protected $fileName = __DIR__.'/../../.env';
+    protected $envFileName = __DIR__ . '/../../.env';
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
         
-        if (file_exists($this->fileName) && !$io->confirm('The file ".env" already exists. Overwrite?')) {
+        if (file_exists($this->envFileName) && !$io->confirm('The file ".env" already exists. Overwrite?')) {
             return Command::SUCCESS;
         }
         
-        $this->askApiKey($io);
+        $this->askForApiKey($io);
         
         return Command::SUCCESS;
     }
     
-    protected function askApiKey(SymfonyStyle $io)
+    protected function askForApiKey(SymfonyStyle $io)
     {
         $apiKeyRegex = '/^([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})$/i';
 
@@ -44,6 +44,6 @@ class InitCommand extends Command {
             }
         );
 
-        file_put_contents($this->fileName, 'HUBSPOT_API_KEY='.$apiKey.PHP_EOL);
+        file_put_contents($this->envFileName, 'HUBSPOT_API_KEY=' . $apiKey . PHP_EOL);
     }
 }
