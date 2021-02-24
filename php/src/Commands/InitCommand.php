@@ -24,8 +24,8 @@ class InitCommand extends Command {
         return Command::SUCCESS;
     }
     
-    protected function askApiKey(SymfonyStyle $io) {
-        
+    protected function askApiKey(SymfonyStyle $io)
+    {
         $apiKeyRegex = '/^([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})$/i';
 
         $apiKey = $io->ask(
