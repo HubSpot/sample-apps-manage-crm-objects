@@ -32,6 +32,7 @@ class InitCommand extends Command
         
         file_put_contents($this->envFileName, $content);
         
+        $io->writeln('API key was put to ".env" successfully.');
         return Command::SUCCESS;
     }
     
