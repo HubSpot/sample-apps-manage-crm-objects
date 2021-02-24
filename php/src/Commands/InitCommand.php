@@ -6,7 +6,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class InitCommand extends Command {
+class InitCommand extends Command
+{
     protected static $defaultName = 'app:init';
     
     protected $envFileName = __DIR__ . '/../../.env';
@@ -15,18 +16,28 @@ class InitCommand extends Command {
     {
         $io = new SymfonyStyle($input, $output);
         
-        if (file_exists($this->envFileName) && !$io->confirm('The file ".env" already exists. Overwrite?')) {
+        if (!file_exists($this->envFileName)) {
+            copy($this->envFileName . '.template', $this->envFileName);
+        } elseif (!$io->confirm('The file ".env" already exists. Overwrite?')) {
             return Command::SUCCESS;
         }
         
-        $this->askForApiKey($io);
+        $apiKey = $this->askForApiKey($io);
+        
+        $content = preg_replace(
+            '/^HUBSPOT_API_KEY=.*$/m',
+            'HUBSPOT_API_KEY=' . $apiKey,
+            file_get_contents($this->envFileName)
+        );
+        
+        file_put_contents($this->envFileName, $content);
         
         return Command::SUCCESS;
     }
     
-    protected function askForApiKey(SymfonyStyle $io)
+    protected function askForApiKey(SymfonyStyle $io): string
     {
-        $apiKey = $io->ask(
+        return $io->ask(
             'Enter the API key for your account (found at https://app.hubspot.com/l/api-key)',
             null,
             function ($key) {
@@ -37,7 +48,5 @@ class InitCommand extends Command {
                 return $key;
             }
         );
-
-        file_put_contents($this->envFileName, 'HUBSPOT_API_KEY=' . $apiKey . PHP_EOL);
     }
 }
