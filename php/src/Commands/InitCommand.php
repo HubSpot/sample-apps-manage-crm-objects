@@ -26,18 +26,12 @@ class InitCommand extends Command {
     
     protected function askForApiKey(SymfonyStyle $io)
     {
-        $apiKeyRegex = '/^([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})$/i';
-
         $apiKey = $io->ask(
             'Enter the API key for your account (found at https://app.hubspot.com/l/api-key)',
             null,
             function ($key) use ($apiKeyRegex) {
                 if (empty($key)) {
                     throw new \RuntimeException('Key can\'t be empty.');
-                }
-
-                if (preg_match($apiKeyRegex, $key) != 1) {
-                    throw new \RuntimeException('Incorect API key.');
                 }
 
                 return $key;
