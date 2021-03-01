@@ -13,7 +13,12 @@ class InitCommand extends Command
 
     protected $envFileName = __DIR__.'/../../.env';
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function configure()
+    {
+        $this->setDescription('Configure ".env" file.');
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
 
