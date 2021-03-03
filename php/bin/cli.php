@@ -3,7 +3,8 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use Commands\GetCommand;
+use Commands\Objects\GetCommand;
+use Commands\Objects\CreateCommand;
 use Commands\InitCommand;
 use Symfony\Component\Console\Application;
 
@@ -13,6 +14,7 @@ $dotenv->load();
 $application = new Application();
 
 $application->add(new GetCommand());
+$application->add(new CreateCommand());
 $application->add(new InitCommand());
 
 $application->run();

@@ -1,6 +1,6 @@
 <?php
 
-namespace Commands;
+namespace Commands\Objects;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -36,5 +36,31 @@ class ObjectsCommand extends Command
         }
 
         return $objectType;
+    }
+    
+    protected function addPropertiesToCommand()
+    {
+        $this
+            ->addArgument(
+                'properties',
+                InputArgument::IS_ARRAY | InputArgument::REQUIRED,
+                'Enter Properties (separate multiple names with a space).'
+            )
+        ;
+    }
+    
+    protected function getProperties(array $elements): array
+    {
+        $properties = [];
+        foreach ($elements as $element) {
+            $array = explode('=', $element);
+            if (count($array) != 2) {
+                throw new \RuntimeException('Invalid Element "'.$element.'".');
+            } else {
+                $properties[$array[0]] = $array[1];
+            }
+        }
+        
+        return $properties;
     }
 }
