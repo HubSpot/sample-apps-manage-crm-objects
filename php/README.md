@@ -55,3 +55,9 @@ Creare new object
 ```
 
 Please also notice that some objects require mandatory properties, that you can provide in the following way:
+
+Delete an object by Id
+
+```bash
+php ./bin/cli.php [objectType] [objectId]
+```
