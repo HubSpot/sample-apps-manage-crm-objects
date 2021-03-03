@@ -16,7 +16,7 @@ class CreateCommand extends ObjectsCommand
         parent::configure();
 
         $this->setDescription('Create an object.');
-        
+
         $this->addPropertiesToCommand();
     }
 
@@ -26,21 +26,21 @@ class CreateCommand extends ObjectsCommand
     ): int {
         $io = new SymfonyStyle($input, $output);
         $hubspot = HubspotClientHelper::createFactory();
-        
+
         $objectType = $this->getObjectType($input);
         $properties = $this->getProperties($input->getArgument('properties'));
-        
+
         $io->writeln('Creating an object...');
-        
+
         $objectName = '\HubSpot\Client\Crm\\'.ucfirst($objectType).'\Model\SimplePublicObjectInput';
         $object = new $objectName();
-        
+
         $object->setProperties($properties);
 
         $response = $hubspot->crm()->{$objectType}()->basicApi()->create($object);
 
         $io->info($response);
-        
+
         return ObjectsCommand::SUCCESS;
     }
 }

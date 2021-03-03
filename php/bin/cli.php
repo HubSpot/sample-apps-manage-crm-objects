@@ -3,9 +3,9 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use Commands\Objects\GetCommand;
-use Commands\Objects\CreateCommand;
 use Commands\InitCommand;
+use Commands\Objects\CreateCommand;
+use Commands\Objects\GetCommand;
 use Symfony\Component\Console\Application;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');

@@ -37,7 +37,7 @@ class ObjectsCommand extends Command
 
         return $objectType;
     }
-    
+
     protected function addPropertiesToCommand()
     {
         $this
@@ -48,19 +48,18 @@ class ObjectsCommand extends Command
             )
         ;
     }
-    
+
     protected function getProperties(array $elements): array
     {
         $properties = [];
         foreach ($elements as $element) {
             $array = explode('=', $element);
-            if (count($array) != 2) {
+            if (2 != count($array)) {
                 throw new \RuntimeException('Invalid Element "'.$element.'".');
-            } else {
-                $properties[$array[0]] = $array[1];
             }
+            $properties[$array[0]] = $array[1];
         }
-        
+
         return $properties;
     }
 }
