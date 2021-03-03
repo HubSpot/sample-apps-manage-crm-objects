@@ -1,10 +1,9 @@
 <?php
 
-namespace Commands;
+namespace Commands\Objects;
 
 use Helpers\HubspotClientHelper;
 use HubSpot\Discovery\Discovery;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -72,7 +71,7 @@ class GetCommand extends ObjectsCommand
             $this->search($input->getOption('query'), $objectType, $hubspot, $io);
         }
 
-        return Command::SUCCESS;
+        return ObjectsCommand::SUCCESS;
     }
 
     protected function search(
