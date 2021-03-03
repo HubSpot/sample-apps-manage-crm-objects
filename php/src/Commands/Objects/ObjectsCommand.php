@@ -8,6 +8,8 @@ use Symfony\Component\Console\Input\InputInterface;
 
 class ObjectsCommand extends Command
 {
+    const KEY_VALUE_COUNT = 2;
+
     protected $allowedObjectsTypes = [
         'companies',
         'contacts',
@@ -54,7 +56,7 @@ class ObjectsCommand extends Command
         $properties = [];
         foreach ($elements as $element) {
             $array = explode('=', $element);
-            if (2 != count($array)) {
+            if (static::KEY_VALUE_COUNT != count($array)) {
                 throw new \RuntimeException('Invalid Element "'.$element.'".');
             }
             $properties[$array[0]] = $array[1];

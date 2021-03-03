@@ -18,12 +18,18 @@ cp node/.env.template node/.env
 
 5. Paste your HubSpot API Key as the value for HUBSPOT_API_KEY in .env
 
-6. Follow the language instructions on how to run. For example, if you want to run the Node server:
+6. Follow the language instructions on how to run.
 
-```
+```Node
 cd node # there's a README in this folder with instructions
 npm install
 ./bin/cli.js
+```
+
+```Php
+cd php # there's a README in this folder with instructions
+composer i
+php ./bin/cli.php
 ```
 
 ## Supported languages
