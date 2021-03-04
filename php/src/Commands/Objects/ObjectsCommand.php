@@ -64,14 +64,14 @@ class ObjectsCommand extends Command
 
         return $properties;
     }
-    
+
     protected function addIdToCommand(): void
     {
         $this
             ->addArgument(
                 'id',
                 InputArgument::REQUIRED,
-                "Object`s Id."
+                'Object`s Id.'
             )
         ;
     }
