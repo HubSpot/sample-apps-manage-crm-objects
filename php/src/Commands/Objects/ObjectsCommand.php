@@ -40,7 +40,7 @@ class ObjectsCommand extends Command
         return $objectType;
     }
 
-    protected function addPropertiesToCommand()
+    protected function addPropertiesToCommand(): void
     {
         $this
             ->addArgument(

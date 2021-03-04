@@ -33,25 +33,31 @@ php ./bin/cli.php
 Get All objects
 
 ```bash
-php ./bin/cli.php [objectType] --all
+php ./bin/cli.php objects:get [objectType] --all
 ```
 
 Get an object by Id
 
 ```bash
-php ./bin/cli.php [objectType] --id=[objectId]
+php ./bin/cli.php objects:get [objectType] --id=[objectId]
 ```
 
 Search an object by query
 
 ```bash
-php ./bin/cli.php [objectType] --query=test
+php ./bin/cli.php objects:get [objectType] --query=test
 ```
 
 Creare new object
 
 ```bash
-./bin/cli.php create [objectType] name=newCompany city=Cambridge state=Massachusetts
+./bin/cli.php objects:create [objectType] name=newCompany city=Cambridge state=Massachusetts
 ```
 
 Please also notice that some objects require mandatory properties, that you can provide in the following way:
+
+Delete an object by Id
+
+```bash
+php ./bin/cli.php objects:delete [objectType] [objectId]
+```

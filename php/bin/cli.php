@@ -5,6 +5,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 use Commands\InitCommand;
 use Commands\Objects\CreateCommand;
+use Commands\Objects\DeleteCommand;
 use Commands\Objects\GetCommand;
 use Symfony\Component\Console\Application;
 
@@ -15,6 +16,7 @@ $application = new Application();
 
 $application->add(new GetCommand());
 $application->add(new CreateCommand());
+$application->add(new DeleteCommand());
 $application->add(new InitCommand());
 
 $application->run();
