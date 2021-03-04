@@ -34,10 +34,11 @@ class DeleteCommand extends ObjectsCommand
         $io = new SymfonyStyle($input, $output);
         $hubspot = HubspotClientHelper::createFactory();
         $objectType = $this->getObjectType($input);
+        $objectId = $input->getArgument('id');
 
-        $io->writeln('Deleting an object by id...');
+        $io->writeln("Deleting an object with id: {$objectId} .");
 
-        $hubspot->crm()->{$objectType}()->basicApi()->archive($input->getArgument('id'));
+        $hubspot->crm()->{$objectType}()->basicApi()->archive($objectId);
 
         return ObjectsCommand::SUCCESS;
     }
