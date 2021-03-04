@@ -46,7 +46,7 @@ class ObjectsCommand extends Command
             ->addArgument(
                 'properties',
                 InputArgument::IS_ARRAY | InputArgument::REQUIRED,
-                'Enter Properties (separate multiple names with a space).'
+                'Enter Properties (separate multiple names with a space), for example firstname=Josh lastname=Green.'
             )
         ;
     }
@@ -63,5 +63,16 @@ class ObjectsCommand extends Command
         }
 
         return $properties;
+    }
+    
+    protected function addIdToCommand(): void
+    {
+        $this
+            ->addArgument(
+                'id',
+                InputArgument::REQUIRED,
+                "Object`s Id."
+            )
+        ;
     }
 }
