@@ -36,7 +36,7 @@ class DeleteCommand extends ObjectsCommand
         $objectType = $this->getObjectType($input);
         $objectId = $input->getArgument('id');
 
-        $io->writeln("Deleting an object with id: {$objectId} .");
+        $io->writeln("Deleting an object with id: {$objectId}");
 
         $hubspot->crm()->{$objectType}()->basicApi()->archive($objectId);
 
