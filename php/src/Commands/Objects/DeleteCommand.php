@@ -3,7 +3,6 @@
 namespace Commands\Objects;
 
 use Helpers\HubspotClientHelper;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -18,13 +17,7 @@ class DeleteCommand extends ObjectsCommand
 
         $this->setDescription('Delete an object by Id.');
 
-        $this
-            ->addArgument(
-                'id',
-                InputArgument::REQUIRED,
-                'Delete an object by Id.'
-            )
-        ;
+        $this->addIdToCommand();
     }
 
     protected function execute(

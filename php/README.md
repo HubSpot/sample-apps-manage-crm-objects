@@ -61,3 +61,13 @@ Delete an object by Id
 ```bash
 php ./bin/cli.php objects:delete [objectType] [objectId]
 ```
+
+Update an object by Id
+
+```bash
+php ./bin/cli.php objects:update [objectType] [objectId] [properties]
+```
+For example:
+```bash
+php ./bin/cli.php objects:update contacts 123456 firstname=Josh
+```
