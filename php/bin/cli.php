@@ -10,8 +10,10 @@ use Commands\Objects\GetCommand;
 use Commands\Objects\UpdateCommand;
 use Symfony\Component\Console\Application;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
-$dotenv->load();
+if (file_exists(__DIR__.'/../.env')) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
+    $dotenv->load();
+}
 
 $application = new Application();
 
