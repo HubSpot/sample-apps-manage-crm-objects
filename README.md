@@ -29,3 +29,4 @@ npm install
 ## Supported languages
 
 * [JavaScript (Node)](node/README.md)
+* [PHP](php/README.md)
