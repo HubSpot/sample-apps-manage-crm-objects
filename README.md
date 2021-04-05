@@ -30,3 +30,5 @@ npm install
 
 * [JavaScript (Node)](node/README.md)
 * [PHP](php/README.md)
+* [Ruby](ruby/README.md)
+* [Python](python/README.md)
