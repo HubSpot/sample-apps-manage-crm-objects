@@ -21,7 +21,7 @@ If .env config file was not configured manually there is a way to initialize the
 php ./bin/cli.php app:init 
 ```
 
-It will ask for your Hubspot Api Key and will save it to new .env config file.
+It will ask for your Hubspot Api Key and will save it to the new .env config file.
 
 3. Commands
 
@@ -48,19 +48,18 @@ Search an object by query
 php ./bin/cli.php objects:get [objectType] --query=test
 ```
 
-Creare new object
+Create new object
 
 ```bash
-./bin/cli.php objects:create [objectType] name=newCompany city=Cambridge state=Massachusetts
+./bin/cli.php objects:create [objectType] [properties]
 ```
 
-Please also notice that some objects require mandatory properties, that you can provide in the following way:
-
-Delete an object by Id
-
+For example:
 ```bash
-php ./bin/cli.php objects:delete [objectType] [objectId]
+./bin/cli.php objects:create companies name=newCompany city=Cambridge state=Massachusetts
 ```
+
+Please also notice that some objects require mandatory properties.
 
 Update an object by Id
 
@@ -69,5 +68,11 @@ php ./bin/cli.php objects:update [objectType] [objectId] [properties]
 ```
 For example:
 ```bash
-php ./bin/cli.php objects:update contacts 123456 firstname=Josh
+php ./bin/cli.php objects:update contacts 123456 firstname=Ryan
+```
+
+Delete an object by Id
+
+```bash
+php ./bin/cli.php objects:delete [objectType] [objectId]
 ```
