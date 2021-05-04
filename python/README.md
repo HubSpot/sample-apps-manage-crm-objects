@@ -27,13 +27,13 @@ Get objects
 python cli.py -m get_page -t [object_type]
 ```
 
-Get an object by Id
+Get an object by id
 
 ```
 python cli.py -m get_by_id -t [object_type] -i [object_id]
 ```
 
-Creare new object
+Create new object
 
 ```
 python cli.py -m create -t [object_type] -p [params]
@@ -42,23 +42,23 @@ python cli.py -m create -t [object_type] -p [params]
 Params is a json, example:
 
 ```
-'{"email":"some@email.com","firstname":"Some","lastname":"One"}'
+'{"email":"some@email.com","firstname":"Brian","lastname":"Halligan"}'
 ```
 
-Delete an object by Id
+Delete an object by id
 
-```bash
-python cli.py -m archive -t [objectType] -i [objectId]
+```
+python cli.py -m archive -t [object_type] -i [object_id]
 ```
 
-Update an object by Id
+Update an object by id
 
-```bash
-python cli.py -m update -t [objectType] -i [objectId] -p [params]
+```
+python cli.py -m update -t [object_type] -i [object_id] -p [params]
 ```
 
 Params is a json, example:
 
 ```
-'{"firstname":"New"}'
+'{"firstname":"John"}'
 ```
