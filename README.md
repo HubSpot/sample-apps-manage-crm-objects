@@ -15,6 +15,7 @@ cp node/.env.template node/.env
 ```
 
 2. You'll need to create a [private app](https://developers.hubspot.com/docs/api/private-apps) to get your access token
+* choose necessary scopes (if you don't choose the sample won't work)
 
 3. Paste your access token as the value for ACCESS_TOKEN in .env
 
