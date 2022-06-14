@@ -7,7 +7,7 @@
         "hubspot/api-client": "^8.2.1"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "~2.12"
+        "friendsofphp/php-cs-fixer": "~3.4.0"
     },
     "autoload": {
         "psr-4": {

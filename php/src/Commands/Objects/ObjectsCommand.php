@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 
 class ObjectsCommand extends Command
 {
-    const KEY_VALUE_COUNT = 2;
+    public const KEY_VALUE_COUNT = 2;
 
     protected $allowedObjectsTypes = [
         'companies',
