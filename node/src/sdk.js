@@ -8,7 +8,7 @@ const { logger } = require('./helpers/logger');
 const OBJECTS_LIMIT = 100;
 
 const hubspotClient = new hubspot.Client({
-  apiKey: process.env.HUBSPOT_API_KEY,
+  accessToken: process.env.ACCESS_TOKEN,
 });
 
 const getAllObjects = async ({ objectType, properties, query }) => {

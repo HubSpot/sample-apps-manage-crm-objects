@@ -28,29 +28,29 @@ class InitCommand extends Command
             return Command::SUCCESS;
         }
 
-        $apiKey = $this->askForApiKey($io);
+        $accessToken = $this->askForAccessToken($io);
 
         $content = preg_replace(
-            '/^HUBSPOT_API_KEY=.*$/m',
-            'HUBSPOT_API_KEY='.$apiKey,
+            '/^ACCESS_TOKEN=.*$/m',
+            'ACCESS_TOKEN='.$accessToken,
             file_get_contents($this->envFileName)
         );
 
         file_put_contents($this->envFileName, $content);
 
-        $io->writeln('API key was put to ".env" successfully.');
+        $io->writeln('Access token was put to ".env" successfully.');
 
         return Command::SUCCESS;
     }
 
-    protected function askForApiKey(SymfonyStyle $io): string
+    protected function askForAccessToken(SymfonyStyle $io): string
     {
         return $io->ask(
-            'Enter the API key for your account (found at https://app.hubspot.com/l/api-key)',
+            'Enter an access token for your account (found at https://app.hubspot.com/l/private-apps)',
             null,
             function ($key) {
                 if (empty($key)) {
-                    throw new \RuntimeException('Key can\'t be empty.');
+                    throw new \RuntimeException('Access token can\'t be empty.');
                 }
 
                 return $key;
