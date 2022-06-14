@@ -14,9 +14,11 @@ This is a sample app for the HubSpot [client libraries](https://developers.hubsp
 cp node/.env.template node/.env
 ```
 
-2. Paste your HubSpot API Key as the value for HUBSPOT_API_KEY in .env
+2. You'll need to create a [private app](https://developers.hubspot.com/docs/api/private-apps) to get your access token
 
-3. Follow the language instructions on how to run. For example, if you want to run the Node server:
+3. Paste your access token as the value for ACCESS_TOKEN in .env
+
+4. Follow the language instructions on how to run. For example, if you want to run the Node server:
 
 ```
 cd node # there's a README in this folder with instructions
