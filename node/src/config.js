@@ -3,9 +3,9 @@ require('dotenv').config({ path: '.env' });
 const { logger } = require('./helpers/logger');
 
 const checkConfig = () => {
-  if (!process.env.HUBSPOT_API_KEY) {
+  if (!process.env.ACCESS_TOKEN) {
     logger.error(
-      'Please, set .env file with authorization api key, or use init command to authorize'
+      'Please, set .env file with access token, or use init command to authorize'
     );
     return false;
   }

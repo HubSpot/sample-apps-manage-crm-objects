@@ -8,5 +8,4 @@ const AVAILABLE_OBJECT_TYPES = {
 
 module.exports = {
   AVAILABLE_OBJECT_TYPES,
-  API_KEY_REGEX,
 };
