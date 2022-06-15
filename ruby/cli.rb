@@ -33,17 +33,13 @@ class Cli
   end
 
   def call_api
-    api = Hubspot::Crm::Objects::BasicApi.new
-    api.public_send(method, *params)
+    client = Hubspot::Client.new(access_token: access_token)
+    api = client.crm.objects.basic_api
+    api.public_send(method, params)
   end
 
   def params
-    required_params = REQUIRED_PARAMS[method]
-    mapped_params = required_params.map { |param| options[param] }
-    opts = options[:opts] || {}
-    opts[:auth_names] = 'hapikey'
-    mapped_params << opts
-    mapped_params
+    options.to_h.slice(*REQUIRED_PARAMS[method])
   end
 end
 
