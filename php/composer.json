@@ -4,10 +4,10 @@
         "php": ">=7.2.5",
         "symfony/console": "^5.2",
         "vlucas/phpdotenv": "^5.3",
-        "hubspot/api-client": "^2.8"
+        "hubspot/api-client": "^8.2.1"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "~2.12"
+        "friendsofphp/php-cs-fixer": "~3.4.0"
     },
     "autoload": {
         "psr-4": {

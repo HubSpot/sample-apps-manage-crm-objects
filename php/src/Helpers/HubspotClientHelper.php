@@ -9,10 +9,10 @@ class HubspotClientHelper
 {
     public static function createFactory(): Discovery
     {
-        if (!empty($_ENV['HUBSPOT_API_KEY'])) {
-            return Factory::createWithApiKey($_ENV['HUBSPOT_API_KEY']);
+        if (!empty($_ENV['ACCESS_TOKEN'])) {
+            return Factory::createWithAccessToken($_ENV['ACCESS_TOKEN']);
         }
 
-        throw new \Exception('Please specify API key');
+        throw new \Exception('Please specify ACCESS_TOKEN in .env.');
     }
 }

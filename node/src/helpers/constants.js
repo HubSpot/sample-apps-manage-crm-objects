@@ -6,9 +6,6 @@ const AVAILABLE_OBJECT_TYPES = {
   product: 'products',
 };
 
-const API_KEY_REGEX = /^([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})$/i;
-
 module.exports = {
   AVAILABLE_OBJECT_TYPES,
-  API_KEY_REGEX,
 };

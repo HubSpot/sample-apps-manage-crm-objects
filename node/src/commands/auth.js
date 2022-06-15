@@ -3,20 +3,13 @@ const {
   createEnvironmentFile,
   getEnvironmentConfigPath,
 } = require('../helpers/common');
-const { API_KEY_REGEX } = require('../helpers/constants');
 
 const { promptUser, overwritePrompt } = require('../helpers/prompts');
 
-const API_KEY_FLOW = {
-  name: 'apiKey',
+const ACCESS_TOKEN_FLOW = {
+  name: 'accessToken',
   message:
-    'Enter the API key for your account (found at https://app.hubspot.com/l/api-key):',
-  validate(val) {
-    if (!API_KEY_REGEX.test(val)) {
-      return 'You did not enter a valid API key. Please try again.';
-    }
-    return true;
-  },
+    'Enter the access token for your account (found at https://app.hubspot.com/l/private-apps):',
 };
 
 exports.command = 'init';
@@ -32,10 +25,10 @@ exports.handler = async () => {
       return;
     }
   }
-  const { apiKey } = await promptUser([API_KEY_FLOW]);
+  const { accessToken } = await promptUser([ACCESS_TOKEN_FLOW]);
 
   createEnvironmentFile({
-    HUBSPOT_API_KEY: apiKey || '',
+    ACCESS_TOKEN: accessToken || '',
   });
 };
 
