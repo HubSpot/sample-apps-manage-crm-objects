@@ -2,6 +2,6 @@ source 'https://rubygems.org'
 
 ruby '2.6.3'
 
-gem 'hubspot-api-client'
+gem 'hubspot-api-client', '>= 11.2'
 gem 'dotenv'
 gem 'pry'

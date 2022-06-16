@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 from hubspot import HubSpot
 from hubspot.crm.objects.models import SimplePublicObjectInput
 
-def api_key():
+def access_token():
   load_dotenv()
-  return os.environ['HUBSPOT_API_KEY']
+  return os.environ['ACCESS_TOKEN']
 
 parser = argparse.ArgumentParser(description='Parse Hubspot API arguments')
 parser.add_argument('-m', '--method', help='Method to run')
@@ -20,7 +20,7 @@ args = parser.parse_args()
 if (args.method is None):
   raise Exception('Please, provide method with -m or --method. See --help to get more info.')
 
-api_client = HubSpot(api_key=api_key())
+api_client = HubSpot(access_token=access_token())
 api = api_client.crm.objects.basic_api
 
 kwargs = vars(args)
