@@ -1,4 +1,4 @@
-# HubSpot-ruby CRM-objects sample app
+# HubSpot-python CRM-objects sample app
 
 ### Requirements
 
