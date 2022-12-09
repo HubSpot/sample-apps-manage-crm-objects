@@ -33,7 +33,7 @@ class Cli
   end
 
   def call_api
-    client = Hubspot::Client.create(access_token: access_token)
+    client = Hubspot::Client.new(access_token: access_token)
     api = client.crm.objects.basic_api
     api.public_send(method, params)
   end
