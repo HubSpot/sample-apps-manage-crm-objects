@@ -48,7 +48,7 @@ OptionParser.new do |opt|
   opt.on('-m', '--method METHOD', 'Method to run') { |o| options.method = o }
   opt.on('-t', '--type TYPE', 'The type of object') { |o| options.object_type = o }
   opt.on('-i', '--id ID', 'The id of object') { |o| options.object_id = o }
-  opt.on('-p', '--properties PROPERTIES', 'Properties of object') { |o| options.simple_public_object_input = Hubspot::Crm::Objects::SimplePublicObjectInput.new(properties: JSON.parse(o)) }
+  opt.on('-p', '--properties PROPERTIES', 'Properties of object') { |o| options.simple_public_object_input = { properties: JSON.parse(o) } }
   opt.on('-o', '--options OPTIONS', 'Options to pass') { |o| options.opts = JSON.parse(o) }
 end.parse!
 
