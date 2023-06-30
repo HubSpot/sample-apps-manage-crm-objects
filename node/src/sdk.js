@@ -11,7 +11,7 @@ const hubspotClient = new hubspot.Client({
   accessToken: process.env.ACCESS_TOKEN,
 });
 
-const getAllObjects = async ({ objectType, properties, query }) => {
+const getAllObjects = async ({ objectType, query, properties}) => {
   const objects = [];
   let objectsResponse;
   let after;
@@ -114,28 +114,12 @@ const updateObject = async ({ objectId, objectType, properties }) => {
   }
 };
 
-const getObject = async ({ objectId, objectType }) => {
+const getObject = async ({ objectId, objectType, properties }) => {
   try {
     if (_.isNil(objectId)) {
       logger.error(`Missed ${objectType}`);
       return;
     }
-
-    // Get All {objectType} Properties
-    // GET /crm/v3/properties/:objectType
-    // https://developers.hubspot.com/docs/api/crm/properties
-    logger.log(
-      `Calling crm.properties.coreApi.getAll API method. Retrieve all ${objectType} properties`
-    );
-    const propertiesResponse = await hubspotClient.crm.properties.coreApi.getAll(
-      objectType
-    );
-    logResponse(propertiesResponse);
-
-    const objectPropertiesNames = _.map(
-      propertiesResponse.results,
-      'name'
-    );
 
     // Get {objectType} record by its id
     // GET /crm/v3/objects/{objectType}/:objectId
@@ -144,9 +128,10 @@ const getObject = async ({ objectId, objectType }) => {
       `Calling crm.${objectType}.basicApi.getById API method. Retrieve ${objectType} by id:`,
       objectId
     );
+
     const objectResponse = await hubspotClient.crm[objectType].basicApi.getById(
       objectId,
-      objectPropertiesNames
+      properties
     );
     logResponse(objectResponse);
 

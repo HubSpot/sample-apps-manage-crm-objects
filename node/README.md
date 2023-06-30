@@ -30,10 +30,21 @@ Show all commands
 ```bash
 ./bin/cli.js --help
 ```
+
 Get list of objects
 
 ```bash
-./bin/cli.js get [objectType] -a --query='test'
+./bin/cli.js get [objectType] -a --query='test' [properties]
+./bin/cli.js get contacts --all 
+./bin/cli.js get contacts --all --properties=firstname --properties=lastname --properties=state
+```
+
+Get an object by id
+
+```bash
+./bin/cli.js get [objectType] [id] [properties]
+./bin/cli.js get contacts 123 
+./bin/cli.js get contacts 123 --properties=firstname --properties=lastname --properties=state
 ```
 
 Create new object
@@ -43,6 +54,7 @@ Create new object
 ```
 
 Please also notice that some objects require mandatory properties, that you can provide in the following way:
+
 ```bash
 ./bin/cli.js create [objectType] --email='test@test.com' --firstname='Brian' --lastname='Halligan'
 ```
@@ -50,7 +62,7 @@ Please also notice that some objects require mandatory properties, that you can 
 Update existing object
 
 ```bash
-./bin/cli.js udpate [objectType] [objectId] --firstname='Ryan'
+./bin/cli.js update [objectType] [objectId] --firstname='Ryan'
 ```
 
 Archive existing object
@@ -60,6 +72,7 @@ Archive existing object
 ```
 
 Get list of available properties for an object
+
 ```bash
 ./bin/cli.js properties [objectType]
 ```

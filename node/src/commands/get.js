@@ -10,7 +10,7 @@ exports.command = 'get <objectType> [objectId]';
 exports.describe = 'Get CRM object';
 
 exports.handler = async (options) => {
-  const { objectType, objectId, all, query } = options;
+  const { objectType, objectId, properties, all, query } = options;
 
   if (!all && !objectId) {
     logger.error(
@@ -26,10 +26,11 @@ exports.handler = async (options) => {
     const res = await getAllObjects({
       objectType: pluralize(objectType),
       query,
+      properties,
     });
     logger.log(res);
   } else {
-    await getObject({ objectType: pluralize(objectType), objectId });
+    await getObject({ objectType: pluralize(objectType), objectId, properties });
   }
 };
 
@@ -47,6 +48,11 @@ exports.builder = (yargs) => {
   yargs.positional('objectId', {
     describe: 'CRM object id',
     type: 'string',
+  });
+
+  yargs.positional('properties', {
+    describe: 'CRM object properties',
+    type: 'array',
   });
 
   yargs.option('query', {
