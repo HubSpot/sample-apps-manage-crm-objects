@@ -25,7 +25,10 @@ exports.builder = (yargs) => {
   yargs.positional('objectType', {
     describe: 'CRM object type',
     type: 'string',
-    choices: Object.keys(AVAILABLE_OBJECT_TYPES),
+    choices: [
+      ...Object.values(AVAILABLE_OBJECT_TYPES),
+      ...Object.keys(AVAILABLE_OBJECT_TYPES),
+    ].sort(),
     coerce: (arg) => arg.toLowerCase(),
   });
 

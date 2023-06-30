@@ -17,7 +17,7 @@
   "author": "hubspot",
   "license": "Apache-2.0",
   "dependencies": {
-    "@hubspot/api-client": "^7.0.1",
+    "@hubspot/api-client": "^9.0.*",
     "bluebird": "^3.7.2",
     "chalk": "^4.1.0",
     "dotenv": "^8.1.0",
