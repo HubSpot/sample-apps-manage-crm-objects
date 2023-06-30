@@ -121,22 +121,6 @@ const getObject = async ({ objectId, objectType }) => {
       return;
     }
 
-    // Get All {objectType} Properties
-    // GET /crm/v3/properties/:objectType
-    // https://developers.hubspot.com/docs/api/crm/properties
-    logger.log(
-      `Calling crm.properties.coreApi.getAll API method. Retrieve all ${objectType} properties`
-    );
-    const propertiesResponse = await hubspotClient.crm.properties.coreApi.getAll(
-      objectType
-    );
-    logResponse(propertiesResponse);
-
-    const objectPropertiesNames = _.map(
-      propertiesResponse.results,
-      'name'
-    );
-
     // Get {objectType} record by its id
     // GET /crm/v3/objects/{objectType}/:objectId
     // https://developers.hubspot.com/docs/api/crm/{objectType}
@@ -144,9 +128,9 @@ const getObject = async ({ objectId, objectType }) => {
       `Calling crm.${objectType}.basicApi.getById API method. Retrieve ${objectType} by id:`,
       objectId
     );
+    
     const objectResponse = await hubspotClient.crm[objectType].basicApi.getById(
-      objectId,
-      objectPropertiesNames
+      objectId
     );
     logResponse(objectResponse);
 
