@@ -62,7 +62,7 @@ Please also notice that some objects require mandatory properties, that you can 
 Update existing object
 
 ```bash
-./bin/cli.js udpate [objectType] [objectId] --firstname='Ryan'
+./bin/cli.js update [objectType] [objectId] --firstname='Ryan'
 ```
 
 Archive existing object
